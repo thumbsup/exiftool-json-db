@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - '4'
+  - '6'
+before_install:
+    # install a recent version of exiftool
+    # unfortunately "apt-get install libimage-exiftool-perl" pulls down 8.60
+  - wget http://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-9.70.tar.gz
+  - gzip -dc Image-ExifTool-9.70.tar.gz | tar -xf -
+  - cd Image-ExifTool-9.70
+  - perl Makefile.PL
+  - sudo make install
+script:
+  - exiftool -ver
+  - npm install
+  - npm test

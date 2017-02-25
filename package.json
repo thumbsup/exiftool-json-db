@@ -1,0 +1,60 @@
+{
+  "name": "exiftool-json-db",
+  "version": "1.0.0",
+  "description": "Track a collection of photos and videos with their metadata",
+  "author": "Romain Prieto",
+  "license": "MIT",
+  "keywords": [
+    "exiftool",
+    "metadata",
+    "exif",
+    "iptc",
+    "xmp",
+    "photo",
+    "video",
+    "collection",
+    "database",
+    "thumbsup"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thumbsup/exiftool-json-db.git"
+  },
+  "main": "lib/database.js",
+  "bin": {
+    "exiftool-json-db": "bin/cli.js"
+  },
+  "scripts": {
+    "mocha": "mocha",
+    "lint": "require-lint && standard",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+    "test": "npm run lint && npm run cover"
+  },
+  "standard": {
+    "globals": [
+      "afterEach",
+      "beforeEach",
+      "describe",
+      "it",
+      "xit"
+    ]
+  },
+  "dependencies": {
+    "async": "^2.1.2",
+    "glob": "^7.1.1",
+    "memory-stream": "0.0.3",
+    "moment": "^2.17.1",
+    "progress": "^1.1.8",
+    "yargs": "^6.6.0"
+  },
+  "devDependencies": {
+    "fs-readdir-recursive": "^1.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2",
+    "require-lint": "^1.1.2",
+    "should": "^11.1.1",
+    "sinon": "^1.17.7",
+    "standard": "^8.6.0",
+    "tmp": "0.0.31"
+  }
+}
