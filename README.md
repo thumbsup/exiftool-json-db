@@ -150,3 +150,14 @@ collection.create({
 
 In case you need to process the list of files straight away, you don't need to re-load `holidays.json` from disk.
 The `done` event includes the whole updated array as an argument.
+
+### debug
+
+By default, the library does not print any extra information.
+The command-line tool only prints basic stats and the progress bar.
+
+To display extra troubleshooting info simply set the following ENV variable:
+
+```bash
+DEBUG="*" exiftool-json-db
+```

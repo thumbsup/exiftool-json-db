@@ -47,7 +47,7 @@ describe('database', function () {
       fs.writeFileSync(invalidDB, 'random data')
       should(() => {
         database.create({media: mediaPath, database: invalidDB})
-      }).throw(/Invalid.*SyntaxError/)
+      }).throw(/SyntaxError/i)
       done()
     })
 
@@ -55,7 +55,7 @@ describe('database', function () {
       fs.writeFileSync(invalidDB, '{"invalid": "format"}')
       should(() => {
         database.create({media: mediaPath, database: invalidDB})
-      }).throw(/Invalid.*Not an array/)
+      }).throw(/not an array/i)
       done()
     })
 
@@ -63,7 +63,7 @@ describe('database', function () {
       fs.writeFileSync(invalidDB, '[{"some": "data"}]')
       should(() => {
         database.create({media: mediaPath, database: invalidDB})
-      }).throw(/Invalid.*Exiftool format/)
+      }).throw(/exiftool format/i)
       done()
     })
   })

@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "async": "^2.1.2",
+    "debug": "^2.6.1",
     "glob": "^7.1.1",
     "memory-stream": "0.0.3",
     "moment": "^2.17.1",

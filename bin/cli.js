@@ -39,9 +39,15 @@ emitter.on('stats', (stats) => {
 })
 
 emitter.on('file', (file) => {
-  bar.tick()
+  if (!process.env['DEBUG']) {
+    bar.tick()
+  }
 })
 
 emitter.on('done', (files) => {
   console.log(`\nFinished updating (${files.length} total)`)
+})
+
+emitter.on('error', (err) => {
+  console.log(`Unexpected error`, err)
 })
