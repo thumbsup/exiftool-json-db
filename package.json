@@ -1,6 +1,6 @@
 {
   "name": "exiftool-json-db",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Track a collection of photos and videos with their metadata",
   "author": "Romain Prieto",
   "license": "MIT",
