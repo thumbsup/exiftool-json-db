@@ -9,6 +9,7 @@ This is one of the core modules of [thumbsup.github.io](https://thumbsup.github.
 [![Build Status](http://img.shields.io/travis/thumbsup/exiftool-json-db.svg?style=flat-square)](http://travis-ci.org/thumbsup/exiftool-json-db)
 [![Dependencies](http://img.shields.io/david/thumbsup/exiftool-json-db.svg?style=flat-square)](https://david-dm.org/thumbsup/exiftool-json-db)
 [![Dev dependencies](http://img.shields.io/david/dev/thumbsup/exiftool-json-db.svg?style=flat-square)](https://david-dm.org/thumbsup/exiftool-json-db)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ## Purpose
 
