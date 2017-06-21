@@ -66,14 +66,14 @@ describe('exiftool', function () {
     it('returns an empty array if the image does not exist', function (done) {
       const file = path.join('files', 'does-not-exist.jpg')
       exiftool.read(ROOT, [file], NO_PROGRESS, (err, data) => {
-        should(err).match(/Failed/)
+        should(err).eql(null)
         should(data).eql([])
         done()
       })
     })
   })
   describe('multiple files', function () {
-    it('does not call <exiftool> at all if the array is empty', function (done) {
+    it('does not call <exiftool> at all if the input array is empty', function (done) {
       const files = []
       exiftool.read(ROOT, files, NO_PROGRESS, (err, data) => {
         should(err).eql(null)
