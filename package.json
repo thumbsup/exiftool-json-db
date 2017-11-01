@@ -42,7 +42,7 @@
   "dependencies": {
     "async": "^2.1.2",
     "debug": "^2.6.1",
-    "glob": "^7.1.1",
+    "fast-glob": "^1.0.1",
     "moment": "^2.17.1",
     "progress": "^2.0.0",
     "tmp": "0.0.31",
