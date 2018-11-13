@@ -10,7 +10,7 @@ describe('database', function () {
   const allPhotos = readdir(mediaPath)
 
   it('can create an in-memory-only database', function (done) {
-    const emitter = database.create({media: mediaPath})
+    const emitter = database.create({ media: mediaPath })
     emitter.on('done', function (files) {
       should(files.length).eql(4)
       should(files.map(f => f.SourceFile)).eql(allPhotos)
@@ -22,7 +22,7 @@ describe('database', function () {
     const databasePath = tmp.tmpNameSync()
 
     it('can create a database from scratch and save it to disk', function (done) {
-      const emitter = database.create({media: mediaPath, database: databasePath})
+      const emitter = database.create({ media: mediaPath, database: databasePath })
       emitter.on('done', function (files) {
         should(files.length).eql(4)
         should(files.map(f => f.SourceFile)).eql(allPhotos)
@@ -32,7 +32,7 @@ describe('database', function () {
 
     it('can update an existing database', function (done) {
       // note: this re-uses the same database file as the previous test
-      const emitter = database.create({media: mediaPath, database: databasePath})
+      const emitter = database.create({ media: mediaPath, database: databasePath })
       emitter.on('done', function (files) {
         should(files.length).eql(4)
         should(files.map(f => f.SourceFile)).eqlItems(allPhotos)
@@ -46,7 +46,7 @@ describe('database', function () {
     it('throws an exception if the database is not JSON', function (done) {
       fs.writeFileSync(invalidDB, 'random data')
       should(() => {
-        database.create({media: mediaPath, database: invalidDB})
+        database.create({ media: mediaPath, database: invalidDB })
       }).throw(/SyntaxError/i)
       done()
     })
@@ -54,7 +54,7 @@ describe('database', function () {
     it('throws an exception if the database is not an array', function (done) {
       fs.writeFileSync(invalidDB, '{"invalid": "format"}')
       should(() => {
-        database.create({media: mediaPath, database: invalidDB})
+        database.create({ media: mediaPath, database: invalidDB })
       }).throw(/not an array/i)
       done()
     })
@@ -62,7 +62,7 @@ describe('database', function () {
     it('throws an exception if the database does not look like an <exiftool> output', function (done) {
       fs.writeFileSync(invalidDB, '[{"some": "data"}]')
       should(() => {
-        database.create({media: mediaPath, database: invalidDB})
+        database.create({ media: mediaPath, database: invalidDB })
       }).throw(/exiftool format/i)
       done()
     })
