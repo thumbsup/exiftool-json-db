@@ -4,18 +4,18 @@ const yargs = require('yargs')
 const database = require('../lib/database')
 
 var argv = yargs
-    .usage('Usage: $0 [options]')
-    .option('media', {
-      alias: 'm',
-      describe: 'root folder with photos and videos',
-      demand: true
-    })
-    .option('database', {
-      alias: 'd',
-      describe: 'path to the JSON database file',
-      demand: true
-    })
-    .argv
+  .usage('Usage: $0 [options]')
+  .option('media', {
+    alias: 'm',
+    describe: 'root folder with photos and videos',
+    demand: true
+  })
+  .option('database', {
+    alias: 'd',
+    describe: 'path to the JSON database file',
+    demand: true
+  })
+  .argv
 
 const format = '[:bar] :current/:total files (:etas)'
 var bar = null
